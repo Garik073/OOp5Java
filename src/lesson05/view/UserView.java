@@ -118,7 +118,7 @@ public class UserView {
         Integer index, a;
         System.out.println("Введите индекс: ");
         index = scanner.nextInt();
-        System.out.println("Введите сумму: ");
+        System.out.println("Введите сумму для списания: ");
         a = scanner.nextInt();
 
         userController.salaryWriteOff(index, salary - a);
