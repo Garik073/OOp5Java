@@ -8,8 +8,11 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class UserView {
-    public static void main(String[] args) {
+    private static Integer salary;
 
+    public static void main(String[] args) {
+        
+        
         // try{
         // File file = new File("user.txt");
         // if (file.exists())
@@ -73,7 +76,7 @@ public class UserView {
         String cmd = "";
         String name;
         Integer age;
-        Integer salary;
+        //Integer salary;
 
         while (!cmd.equals("exit")) {
 
@@ -121,20 +124,22 @@ public class UserView {
 
     private static void SalaryWriteOff(Scanner scanner, UserController userController) {
 
-        Integer index, salary;
+        System.out.println("Вывод Пользователей:");
+        for (int i = 0; i < userController.getUserList().size(); i++) {
+            System.out.printf("index: %d %s \n", i, userController.getUserList().get(i));
+        }
+        Integer index, a;
         System.out.println("Введите индекс: ");
         index = scanner.nextInt();
         System.out.println("Введите сумму: ");
-        salary = scanner.nextInt();
-        System.out.println("Вывод Пользователей:");
-        for (int i = 0; i < userController.getUserList().size(); i++) {
-            System.out.printf("index: %d %s %d \n", i, userController.getUserList().get(i));
-        }
-
-        userController.salaryWriteOff(index, salary);
+        a = scanner.nextInt();
+        
+        
+        userController.salaryWriteOff(index,salary-a);
+        
 
         for (int i = 0; i < userController.getUserList().size(); i++) {
-            System.out.printf("index: %d %s %d \n", i, userController.getUserList().get(i));
+            System.out.printf("index: %d %s \n", i, userController.getUserList().get(i));
             }
 
     }
