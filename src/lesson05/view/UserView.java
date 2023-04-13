@@ -1,9 +1,6 @@
 package lesson05.view;
 
 import lesson05.controller.UserController;
-import lesson05.model.User;
-import java.io.File;
-import java.io.IOException;
 
 import java.util.Scanner;
 
@@ -11,15 +8,6 @@ public class UserView {
     private static Integer salary;
 
     public static void main(String[] args) {
-        
-        
-        // try{
-        // File file = new File("user.txt");
-        // if (file.exists())
-        // file.createNewFile();
-        // } catch (IOException e){
-        // System.out.println("Error:" + e);
-        // }
 
         StarMenu();
 
@@ -76,7 +64,7 @@ public class UserView {
         String cmd = "";
         String name;
         Integer age;
-        //Integer salary;
+       
 
         while (!cmd.equals("exit")) {
 
@@ -102,8 +90,7 @@ public class UserView {
     }
 
     private static void newRemove(Scanner scanner, UserController userController) {
-        // UserController userController = new UserController();
-
+        
         Integer a;
 
         System.out.println("Вывод Пользователей:");
@@ -133,14 +120,12 @@ public class UserView {
         index = scanner.nextInt();
         System.out.println("Введите сумму: ");
         a = scanner.nextInt();
-        
-        
-        userController.salaryWriteOff(index,salary-a);
-        
+
+        userController.salaryWriteOff(index, salary - a);
 
         for (int i = 0; i < userController.getUserList().size(); i++) {
             System.out.printf("index: %d %s \n", i, userController.getUserList().get(i));
-            }
+        }
 
     }
 
