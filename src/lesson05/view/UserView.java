@@ -58,8 +58,9 @@ public class UserView {
                     default:
                         System.out.println("Вы ввели неверное значение меню...\n");
                 }
-                scanner.close();
+                
             } while (key != 4);
+            scanner.close();
         }
 
     }
@@ -83,7 +84,7 @@ public class UserView {
             userController.saveUser(name, age);
             System.out.println(name + age);
             System.out.print("Продолжить? (y/n): ");
-            scanner = new Scanner(System.in);
+            
             cmd = scanner.nextLine();
         }
         System.out.println("Вывод Пользователей:");
@@ -93,7 +94,7 @@ public class UserView {
 
     }
 
-    private static void newRemove(Scanner scanner) {
+    private static void newRemove(Scanner scanner ) {
         UserController userController = new UserController();
         
         Integer a;
@@ -114,6 +115,8 @@ public class UserView {
         System.out.println("Вывод Пользователей:");
         for (int i = 0; i < userController.getUserList().size(); i++) {
             System.out.printf("index: %d %s \n", i, userController.getUserList().get(i));
+            System.out.println();
+            System.out.println();
             System.out.println();
 
         }
