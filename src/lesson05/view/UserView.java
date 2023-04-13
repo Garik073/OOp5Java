@@ -129,14 +129,23 @@ public class UserView {
             setSalary = scanner.nextInt();
              //salary = scanner.nextInt();
         
+            Integer index , salary ;
+            index = scanner.nextInt();
+            salary = scanner.nextInt
+
         System.out.println("Вывод Пользователей:");
         for (int i = 0; i < userController.getUserList().size(); i++) {
             System.out.printf("index: %d %s %d \n", i, userController.getUserList().get(i));
+<<<<<<< HEAD
             
             userController.salaryWriteOff(index, setSalary);
             
         }
+=======
+          }
+>>>>>>> 4c78bfea40132196e067b9f7651bdd26788a0290
 
+          userController.salaryWriteOff(index,salary);
         }
 
         
