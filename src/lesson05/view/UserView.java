@@ -35,6 +35,7 @@ public class UserView {
     private static void StarMenu() {
 
         Scanner scanner = new Scanner(System.in);
+        UserController userController = new UserController();
 
         if (scanner != null) {
             int key;
@@ -44,13 +45,13 @@ public class UserView {
                 key = scanner.nextInt();
                 switch (key) {
                     case 1:
-                        addNewUser(scanner);
+                        addNewUser(scanner,userController);
                         break;
                     case 2:
-                        newRemove(scanner);
+                        newRemove(scanner,userController);
                         break;
                     case 3:
-                        newVolme();
+                        SalaryWriteOff(scanner,userController);
                         break;
                     case 4:
                         System.out.println("Завершение программы...");
@@ -65,24 +66,27 @@ public class UserView {
 
     }
 
-    private static void addNewUser(Scanner scanner) {
+    private static void addNewUser(Scanner scanner, UserController userController) {
 
-        UserController userController = new UserController();
+        
         
         System.out.println("Добавте пользователя");
 
         String cmd = "";
         String name;
         Integer age;
+        Integer salary;
 
         while (!cmd.equals("exit")) {
 
             scanner.nextLine();
             System.out.print("Введите имя : ");
             name = scanner.nextLine();
-            System.out.print("Введитевозрат: ");
+            System.out.print("Введите возрат: ");
             age = scanner.nextInt();
-            userController.saveUser(name, age);
+            System.out.print("Введите сумму ");
+            salary = scanner.nextInt();
+            userController.saveUser(name, age,salary);
             System.out.println(name + age);
             scanner.nextLine();
             System.out.print("Продолжить? (y/n): ");
@@ -96,41 +100,44 @@ public class UserView {
 
     }
 
-    private static void newRemove(Scanner scanner ) {
-        UserController userController = new UserController();
+    private static void newRemove(Scanner scanner, UserController userController ) {
+        //UserController userController = new UserController();
         
         Integer a;
 
         System.out.println("Вывод Пользователей:");
         for (int i = 0; i < userController.getUserList().size(); i++) {
-            System.out.printf("index: %d %s \n", i, userController.getUserList().get(i));
+            System.out.printf("index: %d %s %d \n", i, userController.getUserList().get(i));
         }
 
         System.out.println("Введите индекс пользователя: "); 
         a = scanner.nextInt();
 
-        userController.getUserList().remove(a);
+        userController.removeUser(userController.getUserList().get(a));
         System.out.println("Вывод Пользователей:");
         for (int i = 0; i < userController.getUserList().size(); i++) {
             System.out.printf("index: %d %s \n", i, userController.getUserList().get(i));
         }
 
-        System.out.println("Введите индекс пользователя: "); 
+         
 
     }
 
-    private static void newVolme() {
-        UserController userController = new UserController();
+    private static void SalaryWriteOff(Scanner scanner, UserController userController) {
+        
+        System.out.println("Вывод Пользователей:");
         System.out.println("Вывод Пользователей:");
         for (int i = 0; i < userController.getUserList().size(); i++) {
-            System.out.printf("index: %d %s \n", i, userController.getUserList().get(i));
-            System.out.println();
-            System.out.println();
-            System.out.println();
+            System.out.printf("index: %d %s %d \n", i, userController.getUserList().get(i));
+            Integer index , salary ;
+            index = scanner.nextInt();
+            salary = scanner.nextInt();
+            //userController.salaryWriteOff(index,salary);
+            
+        }
 
         }
 
         
 
     }
-}

@@ -9,7 +9,11 @@ public interface UserService {
      void removeUser(User user);
 
      void updateUser(int index, User user);
+     
+     void salaryWriteOff(int index, User salary);
 
      List<User> getUserList();
+
+     void salaryWriteOff(int index, int salary);
 }
 

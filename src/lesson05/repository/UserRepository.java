@@ -22,6 +22,12 @@ public class UserRepository {
     public void updateUser(int index, User user) {
         userList.set(index, user);
     }
+
+    public void salaryWriteOff(int index, User salary){
+        userList.set(index,salary);
+
+    }
+
     public List<User> getUserList() {
         return userList;
     }

@@ -8,8 +8,8 @@ import lesson05.service.UserServiceImpl;
 public class UserController {
     private UserService userService = new UserServiceImpl();
 
-    public void saveUser(String name, int age) {
-        userService.saveUser(new User(name, age));
+    public void saveUser(String name, int age, int salary) {
+        userService.saveUser(new User(name, age, salary));
     }
 
     public void removeUser(User user) {
@@ -18,6 +18,10 @@ public class UserController {
 
     public void updateUser(int index, User user) {
         userService.updateUser(index, user);
+    }
+
+    public void salaryWriteOff(int index, User salary){
+        userService.salaryWriteOff(index, salary);
     }
 
     public List<User> getUserList() {

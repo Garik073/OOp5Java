@@ -33,10 +33,26 @@ public class UserServiceImpl implements UserService {
         } else {
             System.out.println("User is null!");
         }
+    }  
+
+    @Override
+    public void salaryWriteOff(int index, User salary){
+        if (salary != null) {
+            userRepository.salaryWriteOff(index, salary);
+        } else {
+            System.out.println("User is null!");
+        }
+
     }
 
     @Override
     public List<User> getUserList() {
         return userRepository.getUserList();
+    }
+
+    @Override
+    public void salaryWriteOff(int index, int salary) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'salaryWriteOff'");
     }
 }
