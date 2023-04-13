@@ -133,11 +133,9 @@ public class UserView {
         System.out.println("Вывод Пользователей:");
         for (int i = 0; i < userController.getUserList().size(); i++) {
             System.out.printf("index: %d %s %d \n", i, userController.getUserList().get(i));
-            
-            userController.salaryWriteOff(index,salary);
-            
-        }
+          }
 
+          userController.salaryWriteOff(index,salary);
         }
 
         
