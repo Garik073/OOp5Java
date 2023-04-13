@@ -123,16 +123,17 @@ public class UserView {
 
     }
 
-    private static void SalaryWriteOff(Scanner scanner, UserController userController) {
+    private static void SalaryWriteOff(Scanner scanner, UserController userController,int setSalary) {
+            Integer index  ;
+            index = scanner.nextInt();
+            setSalary = scanner.nextInt();
+             //salary = scanner.nextInt();
         
-        System.out.println("Вывод Пользователей:");
         System.out.println("Вывод Пользователей:");
         for (int i = 0; i < userController.getUserList().size(); i++) {
             System.out.printf("index: %d %s %d \n", i, userController.getUserList().get(i));
-            Integer index , salary ;
-            index = scanner.nextInt();
-            salary = scanner.nextInt();
-            //userController.salaryWriteOff(index,salary);
+            
+            userController.salaryWriteOff(index, setSalary);
             
         }
 

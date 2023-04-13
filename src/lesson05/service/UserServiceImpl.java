@@ -5,7 +5,7 @@ import lesson05.model.User;
 import lesson05.repository.UserRepository;
 
 public class UserServiceImpl implements UserService {
-    private UserRepository userRepository = new UserRepository();
+    public UserRepository userRepository = new UserRepository();
 
     @Override
     public void saveUser(User user) {
@@ -36,23 +36,9 @@ public class UserServiceImpl implements UserService {
     }  
 
     @Override
-    public void salaryWriteOff(int index, User salary){
-        if (salary != null) {
-            userRepository.salaryWriteOff(index, salary);
-        } else {
-            System.out.println("User is null!");
-        }
-
-    }
-
-    @Override
     public List<User> getUserList() {
         return userRepository.getUserList();
     }
 
-    @Override
-    public void salaryWriteOff(int index, int salary) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'salaryWriteOff'");
-    }
+   
 }

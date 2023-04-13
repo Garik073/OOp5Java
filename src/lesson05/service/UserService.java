@@ -10,7 +10,7 @@ public interface UserService {
 
      void updateUser(int index, User user);
      
-     void salaryWriteOff(int index, User salary);
+     
 
      List<User> getUserList();
 

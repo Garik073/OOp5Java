@@ -20,7 +20,7 @@ public class UserController {
         userService.updateUser(index, user);
     }
 
-    public void salaryWriteOff(int index, User salary){
+    public void salaryWriteOff(int index, int salary){
         userService.salaryWriteOff(index, salary);
     }
 
