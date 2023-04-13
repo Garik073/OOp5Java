@@ -106,9 +106,16 @@ public class UserView {
             System.out.printf("index: %d %s \n", i, userController.getUserList().get(i));
         }
 
+        System.out.println("Введите индекс пользователя: "); 
         a = scanner.nextInt();
 
         userController.getUserList().remove(a);
+        System.out.println("Вывод Пользователей:");
+        for (int i = 0; i < userController.getUserList().size(); i++) {
+            System.out.printf("index: %d %s \n", i, userController.getUserList().get(i));
+        }
+
+        System.out.println("Введите индекс пользователя: "); 
 
     }
 
