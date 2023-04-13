@@ -23,8 +23,8 @@ public class UserRepository {
         userList.set(index, user);
     }
 
-    public void salaryWriteOff(int index, User setSalary){
-        userList.set(index,setSalary);
+    public void salaryWriteOff(int index, int salary){
+        userList.get(index).setSalary(salary);
 
     }
 

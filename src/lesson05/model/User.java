@@ -1,7 +1,4 @@
 package lesson05.model;
-
-import lesson05.service.UserServiceImpl;
-
 public class User {
     private String name;
     private int age;
@@ -46,14 +43,5 @@ public class User {
                 ", age='" + age + '\'' +
                 ", salary='" + salary + '\'' +
                 '}';
-    }
-
-    public void salaryWriteOff(int index, UserServiceImpl userServiceImpl){
-        if (this != null) {
-            userServiceImpl.userRepository.salaryWriteOff(index, this);
-        } else {
-            System.out.println("User is null!");
-        }
-    
     }
 }

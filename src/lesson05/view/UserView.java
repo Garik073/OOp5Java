@@ -45,13 +45,13 @@ public class UserView {
                 key = scanner.nextInt();
                 switch (key) {
                     case 1:
-                        addNewUser(scanner,userController);
+                        addNewUser(scanner, userController);
                         break;
                     case 2:
-                        newRemove(scanner,userController);
+                        newRemove(scanner, userController);
                         break;
                     case 3:
-                        SalaryWriteOff(scanner,userController);
+                        SalaryWriteOff(scanner, userController);
                         break;
                     case 4:
                         System.out.println("Завершение программы...");
@@ -59,7 +59,7 @@ public class UserView {
                     default:
                         System.out.println("Вы ввели неверное значение меню...\n");
                 }
-                
+
             } while (key != 4);
             scanner.close();
         }
@@ -68,8 +68,6 @@ public class UserView {
 
     private static void addNewUser(Scanner scanner, UserController userController) {
 
-        
-        
         System.out.println("Добавте пользователя");
 
         String cmd = "";
@@ -86,11 +84,11 @@ public class UserView {
             age = scanner.nextInt();
             System.out.print("Введите сумму ");
             salary = scanner.nextInt();
-            userController.saveUser(name, age,salary);
+            userController.saveUser(name, age, salary);
             System.out.println(name + age);
             scanner.nextLine();
             System.out.print("Продолжить? (y/n): ");
-            
+
             cmd = scanner.nextLine();
         }
         System.out.println("Вывод Пользователей:");
@@ -100,9 +98,9 @@ public class UserView {
 
     }
 
-    private static void newRemove(Scanner scanner, UserController userController ) {
-        //UserController userController = new UserController();
-        
+    private static void newRemove(Scanner scanner, UserController userController) {
+        // UserController userController = new UserController();
+
         Integer a;
 
         System.out.println("Вывод Пользователей:");
@@ -110,7 +108,7 @@ public class UserView {
             System.out.printf("index: %d %s %d \n", i, userController.getUserList().get(i));
         }
 
-        System.out.println("Введите индекс пользователя: "); 
+        System.out.println("Введите индекс пользователя: ");
         a = scanner.nextInt();
 
         userController.removeUser(userController.getUserList().get(a));
@@ -119,35 +117,26 @@ public class UserView {
             System.out.printf("index: %d %s \n", i, userController.getUserList().get(i));
         }
 
-         
-
     }
 
-    private static void SalaryWriteOff(Scanner scanner, UserController userController,int setSalary) {
-            Integer index  ;
-            index = scanner.nextInt();
-            setSalary = scanner.nextInt();
-             //salary = scanner.nextInt();
-        
-            Integer index , salary ;
-            index = scanner.nextInt();
-            salary = scanner.nextInt
+    private static void SalaryWriteOff(Scanner scanner, UserController userController) {
 
+        Integer index, salary;
+        System.out.println("Введите индекс: ");
+        index = scanner.nextInt();
+        System.out.println("Введите сумму: ");
+        salary = scanner.nextInt();
         System.out.println("Вывод Пользователей:");
         for (int i = 0; i < userController.getUserList().size(); i++) {
             System.out.printf("index: %d %s %d \n", i, userController.getUserList().get(i));
-<<<<<<< HEAD
-            
-            userController.salaryWriteOff(index, setSalary);
-            
-        }
-=======
-          }
->>>>>>> 4c78bfea40132196e067b9f7651bdd26788a0290
-
-          userController.salaryWriteOff(index,salary);
         }
 
-        
+        userController.salaryWriteOff(index, salary);
+
+        for (int i = 0; i < userController.getUserList().size(); i++) {
+            System.out.printf("index: %d %s %d \n", i, userController.getUserList().get(i));
+            }
 
     }
+
+}

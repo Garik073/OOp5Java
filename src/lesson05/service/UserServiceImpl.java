@@ -5,7 +5,7 @@ import lesson05.model.User;
 import lesson05.repository.UserRepository;
 
 public class UserServiceImpl implements UserService {
-    public UserRepository userRepository = new UserRepository();
+    private UserRepository userRepository = new UserRepository();
 
     @Override
     public void saveUser(User user) {
@@ -36,9 +36,19 @@ public class UserServiceImpl implements UserService {
     }  
 
     @Override
+    public void salaryWriteOff(int index, int salary){
+        if (salary != 0) {
+            userRepository.salaryWriteOff(index, salary);
+        } else {
+            System.out.println("User is null!");
+        }
+
+    }
+
+    @Override
     public List<User> getUserList() {
         return userRepository.getUserList();
     }
 
-   
+    
 }
