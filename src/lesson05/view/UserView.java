@@ -77,12 +77,14 @@ public class UserView {
 
         while (!cmd.equals("exit")) {
 
+            scanner.nextLine();
             System.out.print("Введите имя : ");
             name = scanner.nextLine();
             System.out.print("Введитевозрат: ");
             age = scanner.nextInt();
             userController.saveUser(name, age);
             System.out.println(name + age);
+            scanner.nextLine();
             System.out.print("Продолжить? (y/n): ");
             
             cmd = scanner.nextLine();
