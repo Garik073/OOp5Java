@@ -18,7 +18,7 @@ public class UserView {
         System.out.println("Выберите пункт");
         System.out.println("1:Добавить пользователя");
         System.out.println("2:Удалить пользователя");
-        System.out.println("3:По обьему напитка ");
+        System.out.println("3:Выберите сумму списания ");
         System.out.println("4:Exit");
 
     }
